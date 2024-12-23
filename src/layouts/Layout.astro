@@ -1,0 +1,128 @@
+---
+interface Props {
+  title: string;
+}
+
+import "../styles.scss";
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Trash Transit is an app that allows you to complain about your public transit experiences."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Trash Transit | {title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body class="d-flex flex-column h-100">
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand fw-bold" href="/">Trash Transit</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-lg-0">
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="/privacy-policy">Privacy Policy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/terms-of-service">Terms of Service</a
+                >
+              </li>
+            </ul>
+            <div class="d-lg-flex align-items-center mb-2 mb-lg-0">
+              <a
+                href="/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="d-flex align-items-center me-2 text-decoration-none"
+              >
+                <i
+                  class="bi bi-google-play fs-3 me-2 me-lg-0"
+                  aria-label="Google Play icon"></i>
+                <span class="d-lg-none">Android App</span>
+              </a>
+              <a
+                href="/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="d-flex align-items-center me-3 text-decoration-none mb-2 mb-lg-0"
+              >
+                <i class="bi bi-apple fs-3 me-2 me-lg-0" aria-label="iOS icon"
+                ></i>
+                <span class="d-lg-none">iOS App</span>
+              </a>
+              <a class="btn btn-outline-dark" href="/contact">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="flex-shrink-0">
+      <slot />
+    </main>
+    <footer class="border-top footer bg-body-secondary mt-auto">
+      <div class="container">
+        <div class="pt-3 fs-6 pb-5">
+          <div class="d-flex justify-content-between flex-wrap">
+            <div class="me-3 mb-2 mb-sm-0">
+              <div>
+                <small class="fw-bold"
+                  >© 2024 Trash Transit. All Rights Reserved.</small
+                >
+              </div>
+              <div class="mt-2 mt-lg-3">
+                <a href="/" class="text-decoration-none">
+                  <img src="/AppStore_Badge.svg" style="height:40px" />
+                </a>
+                <a href="/" class="text-decoration-none">
+                  <img src="/GooglePlay_Badge.png" style="height:40px" />
+                </a>
+              </div>
+            </div>
+            <div class="d-flex">
+              <a class="nav-link" href="/privacy-policy">Privacy Policy</a>
+              <a class="nav-link ms-3" href="/terms-of-service"
+                >Terms of Service</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
